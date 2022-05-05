@@ -5,61 +5,110 @@
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title>STAR-WARS_TicTacToe</title>
+    <!-- <title>STAR-WARS_TicTacToe</title> -->
 
-        <link rel="stylesheet" href="../css/styles.css">
-        <script src="STAR-WAR_TicTacToe_JS/STAR-WAR_TicTacToe_script.js" async defer></script>
-    </head>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="STAR-WAR_TicTacToe_JS/STAR-WAR_TicTacToe_script.js" async defer></script>
+</head>
 
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+<body>
 
-        <!-- ******* -->
-        <section class="showcase">
-            <header>
-                <h2 class="logo">Vuken</h2>
-                <div class="toggle"></div>
-            </header>
+    <!-- ******* -->
+    <section class="showcase">
+        <header>
+            <h2 class="logo">Vuken</h2>
+            <div class="toggle"></div>
+        </header>
 
+        <div class="overlay"></div>
 
+        <!--Container-->
+        <div id="container">
+            <!--Row-->
+            <div class="row">
+                <!-- <span id="music-control" class="btn btn-danger">
+            <i id="music-icon" class="fa fa-volume-up" aria-hidden="true"></i>
+            <span id="sound-tooltip" class="tooltip">Toggle Sound</span>
+            </span> -->
+                <h1>Star Wars</h1>
+                <h3>Tic-Tac-Toe</h3>
+            <!-- <span id="reset" class="btn btn-primary">
+                Reset
+                <span id="sound-tooltip" class="tooltip">Reset Game</span>
+            </span> -->
+            </div>
+            <!--End Row-->
 
-
-            <!-- <div class="overlay"></div> -->
-
-            <!-- <div class="text">
-                <h2>Never Stop To </h2>
-                <h3>Exploring The World</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat.</p>
-                <a href="#">Explore</a>
-            </div> -->
-            <!-- <ul class="social">
-                <li><a href="#"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
-                <li><a href="#"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a></li>
-                <li><a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
-            </ul> -->
-        </section>
-        <div class="menu">
-            <ul>
-                <li><a href="../index.html">Bail Out!</a></li>
-                <!-- <li><a href="#">News</a></li>
-            <li><a href="#">Destination</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contact</a></li> -->
-            </ul>
+            <!--Row-->
+            <div class="row">
+                <!--Wrapper-->
+                <div id="wrapper">
+                    <!--Game Board-->
+                    <div id="board">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <!--End Game Board-->
+                </div>
+                <!--End Wrapper-->
+            </div>
+            <!--End Row-->
+            <!-- Row -->
+            <div class="row">
+                <span id="reset" class="btn btn-primary">
+                    Reset Game
+                    <!-- <span id="sound-tooltip" class="tooltip">Reset Game</span> -->
+                </span>
+            </div>
+            <!-- End row -->
+            <!-- Music theme song -->
+            <audio id="theme-song">
+                <source src="http://www.digitpress.com/dpsoundz/mp3/dp_starwars.mp3" />
+            </audio>
+            <audio id="darkside-audio">
+                <source src="http://www.digitpress.com/dpsoundz/mp3/dp_starwars_darkside.mp3" />
+            </audio>
+            <audio id="lightside-audio">
+                <source src="http://www.digitpress.com/dpsoundz/mp3/dp_starwars_theme.mp3" />
+            </audio>
+            <!-- End Music theme song -->
         </div>
-        <!-- ****** -->
+        <!--End Container-->
 
-    </body>
+        <!-- Modals -->
+        <div id="overlay"></div>
+        <div id="modal">
+            <span id="close-modal"><i class="fa fa-times" aria-hidden="true"></i>
+            </span>
+        </div>
+
+        <ul class="social">
+            <li><a href="#"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
+            <li><a href="#"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a></li>
+            <li><a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
+        </ul>
+    </section>
+    <div class="menu">
+        <ul>
+            <li><a href="../index.html">Bail Out!</a></li>
+            <li> It's a dark day in the galaxy far far away!</li>
+        </ul>
+        <br>
+    </div>
+    <!-- ****** -->
+</body>
 
 </html>
