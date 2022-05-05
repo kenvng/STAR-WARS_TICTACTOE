@@ -73,15 +73,15 @@ header .logo {
   z-index: 2;
 }
 
-#audio-control {
+/* #audio-control {
   cursor: pointer;
   padding: 10px 20px;
-  /* background: #000; */
+  background: #000;
   color: #fff;
   border-radius: 4px;
   display: inline-block;
   z-index: 1;
-}
+} */
 
 .overlay {
   position: absolute;
@@ -89,8 +89,7 @@ header .logo {
   left: 0;
   width: 100%;
   height: 100%;
-  /* background: #03a9f4; */
-  mix-blend-mode: overlay;
+  /* mix-blend-mode: overlay; */
 }
 /* 
 .text {
@@ -213,21 +212,9 @@ header .logo {
 
 
 
-
-
-/* body {
-  font-family: 'Roboto', sans-serif;
-  background: #302f2f;
-  color: white;
-} */
-/* body .row {
-  width: 100%;
-}
-body .row:after {
-  content: "";
-  display: table;
-  clear: both;
-} */
+/* ************* */
+/* TICTACTOE CSS */
+/* ************* */
 
 /* CONTAINER STARTS */
 
@@ -283,7 +270,7 @@ a {
 }
 #container h3 {
   margin-bottom: 10px;
-}
+} */
 
 
 /* #container #reset,

@@ -10,8 +10,8 @@ menuToggle.addEventListener("click", () => {
 // VARIABLES
 // =========================
 let playerTurn = 0;
-let luke = '<img src="img/luke.jpg">';
-let vader = '<img src="img/vader.jpg">';
+let luke = '<img src="/img/luke.jpg">';
+let vader = '<img src="/img/vader.jpg">';
 let boxes = document.getElementsByClassName("box");
 let resetBtn = document.getElementById("reset");
 let musicBtn = document.getElementById("music-control");
@@ -28,6 +28,7 @@ let modalMessage = {
   box_occupied: "Sorry, Pick another Square",
   vader_wins: "Now you know the power of the dark side<br> - Vader wins",
   luke_wins: "The force is strong with this one<br> - Luke wins",
+  neither_wins: "Look like no body win<br> - It's a tie!",
 };
 
 // EVENT LISTENERS
@@ -183,6 +184,11 @@ function getWinner() {
     boxes[2].innerHTML === vader
   ) {
     openMessageAndPlayMusic(modalMessage.vader_wins, darkSideClip);
+  }
+
+  //Neither Wins
+  else {
+    openMessageAndPlayMusic(modalMessage.neither_wins, themeSong);
   }
 }
 
