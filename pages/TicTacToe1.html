@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="../css/TicTacToe_Styles1.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jscolor/2.1.1/jscolor.min.js"></script>
+</head>
+
+<body>
+    <!-- <audio src="../sound/RUMBLEEEEEEE.mp" id="my_audio" loop="loop"></audio>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById("my_audio").play();
+        }
+    </script> -->
+    <audio src="../sound/Lets get ready to Rumble   Jock Jams.mp4" id="my_audio" autoplay="autoplay"></audio>
+    <div class="column">
+        <br /><br />
+        <button class="player-score" id="player-x-score">0</button>
+        <br />
+        <h2>Luke Skycrawler</h2>
+        <div class="player-avatar" id="player-x-avatar">
+            <img src="../img/luke.jpg" alt="luke">
+        </div>
+        <br />
+        <div>
+            <input class="x" id="player-x-avatar-color-button" class="input" size="7" onchange="update(this.jscolor)"
+                data-jscolor="" value="" />
+        </div>
+    </div>
+    <div class="container">
+        <h1>Tic Tac Toe</h1>
+        <br />
+        <div>
+            <span>
+                <input size="6" type="text" id="board-size-input" placeholder="Board:" />
+                <button><span id="board-size-output">3</span></button>
+            </span>
+            &nbsp
+            <span>
+                <input size="6" type="text" id="to-win-input" placeholder="To win:" />
+                <button><span id="to-win-output">3</span></button>
+            </span>
+            <button id="submit-button">Submit</button>
+        </div>
+        <br />
+        <div>
+            <p clas="continue-reset">
+                <button id="continue-btn">Continue</button>
+                <button id="reset-btn">Reset</button>
+            </p>
+        </div>
+        <div>
+            <p class="alert"></p>
+        </div>
+        <br />
+        <div class="table-container">
+            <table class="table">
+                <tbody>
+                    <tr class="x1">
+                        <td id="x1 y1"></td>
+                        <td id="x1 y2"></td>
+                        <td id="x1 y3"></td>
+                    </tr>
+                    <tr class="x2">
+                        <td id="x2 y1"></td>
+                        <td id="x2 y2"></td>
+                        <td id="x2 y3"></td>
+                    </tr>
+                    <tr class="x3">
+                        <td id="x3 y1"></td>
+                        <td id="x3 y2"></td>
+                        <td id="x3 y3"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="column">
+        <br /><br />
+        <button class="player-score" id="player-o-score">0</button>
+        <br />
+        <h2>Darth Vader</h2>
+        <div class="player-avatar" id="player-o-avatar">
+            <img src="../img/vader.jpg" alt="vader">
+        </div>
+        <br />
+        <div>
+            <input class="o" id="player-o-avatar-color-button" class="input" size="7" onchange="update(this.jscolor)"
+                data-jscolor="" value="green" />
+        </div>
+    </div>
+    <script src="../js/TicTacToe_script1.js"></script>
+</body>
+
+</html>

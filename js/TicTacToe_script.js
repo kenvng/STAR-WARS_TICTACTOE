@@ -7,6 +7,9 @@ menuToggle.addEventListener("click", () => {
   showcase.classList.toggle("active");
 });
 
+
+
+
 // VARIABLES
 // =========================
 let playerTurn = 0;
@@ -28,8 +31,53 @@ let modalMessage = {
   box_occupied: "Sorry, Pick another Square",
   vader_wins: "Now you know the power of the dark side<br> - Vader wins",
   luke_wins: "The force is strong with this one<br> - Luke wins",
-  neither_wins: "Look like no body win<br> - It's a tie!",
+  itDraws: "Look like no body win<br> - It's a tie!",
 };
+
+////////////////////////////////////////////////////////////////////////
+///////////
+// TIMER //
+// let timer;
+// let button;
+// let timeLeft;
+// let label;
+
+// function countdown() {
+//   if (timeLeft) {
+//     label.innerHTML = timeLeft;
+//     timeLeft--;
+//     timer = setTimeout(countdown, 1000);
+//   } else {
+//     label.innerHTML = "Fail";
+//     timer = undefined;
+//   }
+// }
+
+// function takeMove() {
+//   // timer will only be undefined if the game is not started
+//   if (typeof(timer) === "undefined") {
+//     button.innerHTML = "Move";
+//     timeLeft = 10;
+//     countdown();
+//   } else {
+//     clearTimeout(timer);
+//     timeLeft = 10;
+//     countdown();
+//   }
+// }
+
+// function init() {
+//   button = document.getElementById("move");
+//   label = document.getElementById("label");
+//   button.addEventListener("click", takeMove);
+// }
+
+// document.addEventListener("DOMContentLoaded", init, false);
+// END TIMER //
+///////////////
+////////////////////////////////////////////////////////////////////////
+
+
 
 // EVENT LISTENERS
 // =========================
@@ -53,7 +101,16 @@ musicBtn.addEventListener("click", function () {
   }
 });
 
-// GAME FUNCTIONS
+// ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| //
+// https://www.w3schools.com/js/js_this.asp
+// In an object method, THIS refers to the object.
+// Alone, this refers to the global object.
+// In a function, this refers to the global object.
+// In a function, in strict mode, this is undefined.
+// In an event, this refers to the element that received the event.
+// Methods like call(), apply(), and bind() can refer this to any object.
+
+// GAME FUNCTIONS/LOGIC PVP
 // =========================
 // Setting player turn on each click
 function setPlayerTurn() {
@@ -187,10 +244,29 @@ function getWinner() {
   }
 
   //Neither Wins
-  else {
-    openMessageAndPlayMusic(modalMessage.neither_wins, themeSong);
-  }
+  // else {
+  //   openMessageAndPlayMusic(modalMessage.neither_wins, themeSong);
+  // }
 }
+
+// TESTING //
+// It is a DRAW
+// function endGame(draw) {
+//   if (draw) {
+//     winningMessageTextElement.innerText = 'Draw!'
+//   } else {
+//     winningMessageTextElement.innerText = `${circleTurn ? "O's" : "X's"} Wins!`
+//   }
+//   winningMessageElement.classList.add('show')
+// }
+
+// function isDraw() {
+//   return [...cellElements].every(cell => {
+//     return cell.classList.contains(X_CLASS) || cell.classList.contains(CIRCLE_CLASS)
+//   })
+// }
+
+
 
 // function to reset board
 function resetBoard() {
@@ -200,8 +276,10 @@ function resetBoard() {
   playerTurn = 0;
 }
 
-// function when either luke or vader wins
+/////////////////////////////////////////////
+// FUNCTION when EITHER luke or vader WINS //
 function openMessageAndPlayMusic(player, song) {
+  if (player)
   // open messsage
   openModal(player);
 
@@ -216,7 +294,14 @@ function openMessageAndPlayMusic(player, song) {
   return playSong(song);
 }
 
-// Open modal and set message
+
+/////////////////////////////////////////////
+// FUNCTION when NEITHER luke or vader WINS //
+// function openMessageAndPlayMusic(itDraws, song)
+
+
+////////////////////////////////
+// Open MODEL and set MESSAGE //
 function openModal(message) {
   let h2 = document.createElement("h2");
   overlay.style.display = "block";
