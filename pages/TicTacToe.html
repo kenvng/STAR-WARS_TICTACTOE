@@ -1,117 +1,139 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
 
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>STAR-WARS_TicTacToe</title>
-
-    <link rel="stylesheet" href="/css/styles.css" />
-    <script src="/js/TicTacToe_script.js" async defer></script>
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="../css/TicTacToe-styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jscolor/2.1.1/jscolor.min.js"></script>
 </head>
 
 <body>
-    <!-- **************** -->
-    <!-- SECTION SHOWCASE -->
-    <section class="showcase">
-        <!-- HEADER LOGO & HAMBURGER BUTTON -->
-        <header>
-            <!-- JUST A SPAN TEXTS VUKEN -->
-            <h2 class="logo">Vuken</h2>
-            <!-- BUTTON HAMBURGER STACK MENU -->
-            <div class="toggle"></div>
-        </header>
-        <!-- END HEADER LOGO & HAMBURGER BUTTON -->
+    <!-- INTRO AUDIO -->
+    <!-- <audio src="../sound/RUMBLEEEEEEE.mp" id="my_audio" loop="loop"></audio>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById("my_audio").play();
+        }
+    </script> -->
+    <audio src="../sound/LetsGetReadyToRumble-JockJams.mp4" id="my_audio" autoplay="autoplay"></audio>
+    <!-- END INTRO AUDIO -->
 
-        <!-- ************************************ -->
-        <!-- CONTAINER - GAME TITLE & GAME BOARD -->
-        <div id="container">
-            <!--Row-->
-            <div class="row">
-                <h1>Star Wars</h1>
-                <h3>Tic-Tac-Toe</h3>
-            </div>
-            <!--End Row-->
 
-            <!--Row-->
-            <div class="row">
-                <!--Wrapper-->
-                <div id="wrapper">
-                    <!-- ******** -->
-                    <!--Game Board-->
-                    <div id="board">
-                        <div class="box"></div>
-                        <div class="box"></div>
-                        <div class="box"></div>
-                        <div class="box"></div>
-                        <div class="box"></div>
-                        <div class="box"></div>
-                        <div class="box"></div>
-                        <div class="box"></div>
-                        <div class="box"></div>
-                    </div>
-                    <!--End Game Board-->
-                    <!-- ************ -->
-                </div>
-                <!--End Wrapper-->
-            </div>
-            <!--End Row-->
-            <!-- RESET GAME Row -->
-            <div class="row">
-                <span id="reset" class="btn btn-primary">
-                    Reset Game
-                    <!-- <span id="sound-tooltip" class="tooltip">Reset Game</span> -->
-                </span>
-            </div>
-            <!-- End RESET GAME Row -->
-
-            <!-- Music -->
-            <audio id="theme-song">
-                <source src="http://www.digitpress.com/dpsoundz/mp3/dp_starwars.mp3" /> -->
-                <!-- <source src="" />
-            </audio>
-            <audio id="darkside-audio">
-                <source src="http://www.digitpress.com/dpsoundz/mp3/dp_starwars_darkside.mp3" />
-                <!-- <source src="" /> -->
-            </audio>
-            <audio id="lightside-audio">
-                <source src="http://www.digitpress.com/dpsoundz/mp3/dp_starwars_theme.mp3" />
-                <!-- <source src="" /> -->
-            </audio>
-            <!-- End Music -->
+    <div class="column">
+        <br /><br />
+        <button class="player-score" id="player-x-score">0</button>
+        <br />
+        <h2>Luke Skycrawler</h2>
+        <div class="player-avatar" id="player-x-avatar">
+            <img src="../img/luke.jpg" alt="luke">
         </div>
-        <!-- END CONTAINER -->
-        <!-- ************* -->
-
-
-        <!-- Modals -->
-        <div id="overlay"></div>
-        <div id="modal">
-            <span id="close-modal"><i class="fa fa-times" aria-hidden="true"></i>
-            </span>
+        <br />
+        <div>
+            <input class="x" id="player-x-avatar-color-button" class="input" size="7" onchange="update(this.jscolor)"
+                data-jscolor="" value="" />
         </div>
-        <!-- SOCIAL MEDIA -->
-        <ul class="social">
-            <li><a href="#"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
-            <li><a href="#"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a></li>
-            <li><a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
-        </ul>
-    </section>
-    <div class="menu">
-        <ul>
-            <li><a href="/index.html">Bail Out!</a></li>
-            <li> It's a dark day in the galaxy far far away!</li>
-        </ul>
-        <br>
     </div>
-    <!-- ****** -->
+    <div class="container">
+        <h1>Tic Tac Toe</h1>
+        <br />
+        <div>
+            <span>
+                <input size="6" type="text" id="board-size-input" placeholder="Board:" />
+                <button><span id="board-size-output">3</span></button>
+            </span>
+            &nbsp
+            <span>
+                <input size="6" type="text" id="to-win-input" placeholder="To win:" />
+                <button><span id="to-win-output">3</span></button>
+            </span>
+            <button id="submit-button">Submit</button>
+        </div>
+        <br />
+        <div>
+            <p clas="continue-reset">
+                <button id="continue-btn">Continue</button>
+                <button id="reset-btn">Reset</button>
+            </p>
+        </div>
+        <div>
+            <p class="alert"></p>
+        </div>
+        <br />
+        <div class="table-container">
+            <table class="table">
+                <tbody>
+                    <tr class="x1">
+                        <td id="x1 y1"></td>
+                        <td id="x1 y2"></td>
+                        <td id="x1 y3"></td>
+                    </tr>
+                    <tr class="x2">
+                        <td id="x2 y1"></td>
+                        <td id="x2 y2"></td>
+                        <td id="x2 y3"></td>
+                    </tr>
+                    <tr class="x3">
+                        <td id="x3 y1"></td>
+                        <td id="x3 y2"></td>
+                        <td id="x3 y3"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="column">
+        <br /><br />
+        <button class="player-score" id="player-o-score">0</button>
+        <br />
+        <h2>Darth Vader</h2>
+        <div class="player-avatar" id="player-o-avatar">
+            <img src="../img/vader.jpg" alt="vader">
+        </div>
+        <br />
+        <div>
+            <input class="o" id="player-o-avatar-color-button" class="input" size="7" onchange="update(this.jscolor)"
+                data-jscolor="" value="green" />
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <!-- <div class="social-media">
+            <ul class="social">
+                <li><a href="#"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
+                <li><a href="#"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a></li>
+                <li><a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
+            </ul>
+        </div> -->
+        <!-- <div class="menu">
+            <ul>
+                <li><a href="/index.html">Bail Out!</a></li>
+                <li> It's a dark day in the galaxy far far away!</li>
+            </ul>
+        </div> -->
+    </footer>
+
+
+
+    <!-- Music -->
+    <!-- <audio id="theme-song">
+        <source src="http://www.digitpress.com/dpsoundz/mp3/dp_starwars.mp3" />
+        <source src="" />
+    </audio> -->
+    <audio id="darkside-audio">
+        <source src="http://www.digitpress.com/dpsoundz/mp3/dp_starwars_darkside.mp3" />
+        <!-- <source src="" /> -->
+    </audio>
+    <audio id="lightside-audio">
+        <source src="http://www.digitpress.com/dpsoundz/mp3/dp_starwars_theme.mp3" />
+        <!-- <source src="" /> -->
+    </audio>
+    <!-- End Music -->
+
+
+    <script src="../js/TicTacToe-script.js"></script>
 </body>
 
 </html>

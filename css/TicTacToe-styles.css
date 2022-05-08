@@ -50,7 +50,7 @@ body {
 
 img {
     width: 14vh;
-    heigth: 14vh;
+    height: 14vh;
     align-items: center;
     margin-top: .5vh;
 }
@@ -86,4 +86,11 @@ table {
 td {
     border: 1px black solid;
     background-color: rgba(0, 0, 0, 5%);
+}
+
+footer {
+    display: flex;
+    align-items: bottom;
+    justify-content: center;
+    text-align: center;
 }
