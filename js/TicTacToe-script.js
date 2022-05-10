@@ -1,3 +1,19 @@
+// var playing = false;
+// document.getElementById('toggle').addEventListener('click', function() {
+// 	if (playing == false) {
+// document.getElementById('#my_audio').play();
+// 		playing = true;
+// 	} else {
+// 		document.getElementById('scratch').pause();
+// 		playing = false;
+		
+// 	}
+// })
+
+
+
+
+
 window.onload = function () {
     document.getElementById("my_audio").play();
 }
